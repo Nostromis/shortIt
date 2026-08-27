@@ -1,4 +1,4 @@
-from flask import Flask, redirect, url_for, render_template, request, flash
+from flask import Flask, redirect, uckearrl_for, render_template, request, flash
 from flask_sqlalchemy import SQLAlchemy
 import re
 import datetime
@@ -11,7 +11,7 @@ app = Flask(__name__)
 basedir = os.path.abspath(os.path.dirname(__file__))
 
 app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///" + os.path.join(basedir, "shortenit.db")
-app.secret_key = "some-random-string-for-now"
+app.secret_key = os.environ.get("SECRET_KEY", "dev-fallback-key")
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 db = SQLAlchemy(app)
