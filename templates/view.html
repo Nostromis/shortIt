@@ -1,0 +1,7 @@
+{% extends "base.html" %}
+{% block title%}View shortend{% endblock %}
+{% block content %}
+    {% for item in values %}
+        <p>Original Url: {{item.originalUrl}} Shortend: {{item.shortend}} clicks: {{item.clicks}} created at {{item.createdAt}}</p>
+    {% endfor %}
+{% endblock %}
