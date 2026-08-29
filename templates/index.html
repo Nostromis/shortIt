@@ -2,16 +2,60 @@
 {% block title%}Url Shortener Page{% endblock %}
 
 {% block content%}
+<style>
+    body {
+        background-color: black;
+    }
+
+    .submit {
+        position: relative;
+        z-index: 1;
+        width: 700px;
+        max-width: 90%;
+        height: 50px;
+
+        background-color: #111;
+
+        margin: 10px auto;
+        padding: 5px;
+        box-sizing: border-box;
+
+        border: 1px solid #2e2e2e;
+        border-radius: 18px;
+
+        display: flex;
+        flex-direction: column;
+    }
+
+    .submit form {
+        margin-top: auto;
+        display: flex;
+        align-items: center;
+    }
+
+    .link-input {
+        flex: 1;
+        height: 40px;
+        box-sizing: border-box;
+        background-color: #111;
+        color: white;
+        border: 1px solid #111;
+        border-radius: 8px;
+
+    }
+</style>
+
+<h1 style="color: white; text-align: center; font-size: 200px; margin-top: 200px;">ShortIt</h1>
+<div class="submit">
+    <form action="#" method="post">
+        <input type="text" name="url" placeholder="Paste your URL here" class="link-input"/>
+    </form>
+</div>
     {% with messages = get_flashed_messages() %}
         {% if messages %}
             {% for message in messages %}
-                <p>{{message}}</p>
+                <p style="text-align: center; color: white;">{{message}}</p>
             {% endfor %}
         {% endif %}
     {% endwith %}
-<form action="#" method="post">
-    <p>Enter Url:</p>
-    <p><input type="text" name="url" placeholder="Paste your URL here"/></p> 
-    <p><input type="submit" value="submit"/></p>
-</form>
 {% endblock %}

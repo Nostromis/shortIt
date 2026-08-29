@@ -2,6 +2,12 @@
 {% block title%}View shortend{% endblock %}
 {% block content %}
     {% for item in values %}
+        <style>
+            body {
+                background-color: black;
+                color: white;
+            }
+        </style>
         <p>Original Url: {{item.originalUrl}} Shortend: {{item.shortend}} clicks: {{item.clicks}} created at {{item.createdAt}}</p>
     {% endfor %}
 {% endblock %}
